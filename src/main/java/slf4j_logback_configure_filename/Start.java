@@ -13,7 +13,7 @@ import ch.qos.logback.core.rolling.RollingFileAppender;
 import ch.qos.logback.core.rolling.TimeBasedRollingPolicy;
 import ch.qos.logback.core.util.FileSize;
 
-public class Start2 {
+public class Start {
 
     public static void main(String[] args) throws Exception  {
 
@@ -48,7 +48,7 @@ public class Start2 {
         rollingPolicy.setParent(rollingFileAppender);
         rollingPolicy.setFileNamePattern(logfilename+".%d{yyyy-MM-dd_HH-mm}.log");
         rollingPolicy.setMaxHistory(10);
-        rollingPolicy.setTotalSizeCap(FileSize.valueOf("1KB"));
+        rollingPolicy.setTotalSizeCap(FileSize.valueOf("10KB"));
         rollingPolicy.setCleanHistoryOnStart(false);
         rollingPolicy.start();
 
