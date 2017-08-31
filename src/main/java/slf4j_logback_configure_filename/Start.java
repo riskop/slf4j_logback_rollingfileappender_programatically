@@ -13,6 +13,9 @@ import ch.qos.logback.core.rolling.RollingFileAppender;
 import ch.qos.logback.core.rolling.TimeBasedRollingPolicy;
 import ch.qos.logback.core.util.FileSize;
 
+/**
+ * 
+ */
 public class Start {
 
     public static void main(String[] args) throws Exception  {
