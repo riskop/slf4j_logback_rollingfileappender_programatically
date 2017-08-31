@@ -25,7 +25,7 @@ public class Start {
         while (true) {
             org.slf4j.Logger logger = LoggerFactory.getLogger("A_LOGGER_NAME");
             logger.warn("a warning " + System.currentTimeMillis());
-            Thread.sleep(1000);
+            Thread.sleep(60*1000);
         }
     }
 
@@ -49,9 +49,9 @@ public class Start {
         TimeBasedRollingPolicy<ILoggingEvent> rollingPolicy = new TimeBasedRollingPolicy<>();
         rollingPolicy.setContext(context);
         rollingPolicy.setParent(rollingFileAppender);
-        rollingPolicy.setFileNamePattern(logfilename+".%d{yyyy-MM-dd_HH-mm}.log");
+        rollingPolicy.setFileNamePattern(logfilename+".%d{yyyy-MM-dd}.log");
         rollingPolicy.setMaxHistory(10);
-        rollingPolicy.setTotalSizeCap(FileSize.valueOf("10KB"));
+        rollingPolicy.setTotalSizeCap(FileSize.valueOf("100MB"));
         rollingPolicy.setCleanHistoryOnStart(false);
         rollingPolicy.start();
 
